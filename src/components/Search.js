@@ -10,7 +10,7 @@ class Search extends Component {
   render() {
     return (
       <Input
-        onChange={(e) => this.handleChange(e.target.value)}
+        onChange={(e) => this.handleChange(e)}
         className="search-box"
         placeholder="Enter Country Name"
       />

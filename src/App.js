@@ -6,8 +6,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = { searchTerm: "" };
-    this.handleChange = (updatedSearchTerm) => {
-      this.setState({ searchTerm: updatedSearchTerm });
+    this.handleChange = (e) => {
+      this.setState({ searchTerm: e.target.value });
     };
   }
 

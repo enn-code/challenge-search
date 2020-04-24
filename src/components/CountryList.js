@@ -219,7 +219,9 @@ class CountryList extends Component {
 
   render() {
     const { searchTerm } = this.props;
-    const searchResults = this.countries.filter((item) => item === searchTerm);
+    const searchResults = this.countries.filter(
+      (item) => item.toLowerCase().search(searchTerm.toLowerCase()) !== -1
+    );
     return (
       <Paper>
         <List>

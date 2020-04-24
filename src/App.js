@@ -6,13 +6,12 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = { searchTerm: "" };
-    this.handleSearchTermUpdate = (updatedSearchTerm) => {
+    this.handleChange = (updatedSearchTerm) => {
       this.setState({ searchTerm: updatedSearchTerm });
     };
   }
 
   render() {
-    console.log(this.state.searchTerm);
     return (
       <div className="container">
         <center>
@@ -20,7 +19,7 @@ class App extends Component {
         </center>
         <Search
           searchTerm={this.state.searchTerm}
-          handleSearchTermUpdate={this.handleSearchTermUpdate}
+          handleChange={this.handleChange}
         />
         <CountryList searchTerm={this.state.searchTerm} />
       </div>

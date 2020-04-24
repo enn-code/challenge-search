@@ -215,17 +215,25 @@ class CountryList extends Component {
       "Zambia",
       "Zimbabwe",
     ];
+
+    this.state = {
+      filteredCountries: this.countries,
+    };
   }
 
-  render() {
-    const { searchTerm } = this.props;
+  componentWillReceiveProps(newProps) {
+    const { searchTerm } = newProps;
     const searchResults = this.countries.filter(
       (item) => item.toLowerCase().search(searchTerm.toLowerCase()) !== -1
     );
+    this.setState({ filteredCountries: searchResults });
+  }
+
+  render() {
     return (
       <Paper>
         <List>
-          {searchResults.map((item) => {
+          {this.state.filteredCountries.map((item) => {
             return (
               <ListItem>
                 <ListItemText primary={item} />

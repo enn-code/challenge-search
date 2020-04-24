@@ -1,16 +1,20 @@
-import React, {Component} from 'react'
-import Input from '@material-ui/core/Input'
+import React, { Component } from "react";
+import Input from "@material-ui/core/Input";
 
 class Search extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-    render() {
-        return (
-            <Input
-                className="search-box"
-                placeholder="Enter Country Name"
-            />
-        );
-    }
+  render() {
+    return (
+      <Input
+        onChange={(e) => this.props.handleSearchTermUpdate(e.target.value)}
+        className="search-box"
+        placeholder="Enter Country Name"
+      />
+    );
+  }
 }
 
 export default Search;
